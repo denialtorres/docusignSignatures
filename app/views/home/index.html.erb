@@ -1,8 +1,8 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
 
+<div class="container">
 <div class="row">
-<%= form_for :users, :url => { :action => :create } do |f| %>
+  <hr>
+<%= form_for :users, :url => { :action => :create }, :html => { :style => 'display:grid;' }  do |f| %>
                 <div class="small-8 columns">
                   <div class="row">
                     <div class="small-3 columns">
@@ -45,11 +45,11 @@
       
 
 
-  </div>
+
 <% end %>
+</div>
+  <hr>
 
-
-<div class="container">
     <div class="row">
         <table>
             <thead>
