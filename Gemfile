@@ -36,6 +36,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'docusign_rest', github: 'jondkinney/docusign_rest'
 gem "rails-settings-cached"
 gem 'pry'
+gem 'foundation-rails'
+gem "interactor", "~> 3.0"
+gem "interactor-rails", "~> 2.0"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

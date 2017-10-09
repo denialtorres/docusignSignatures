@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171006205438) do
+ActiveRecord::Schema.define(version: 20171009174248) do
 
   create_table "envelope_users", force: :cascade do |t|
     t.integer "envelope_id"
@@ -22,10 +22,12 @@ ActiveRecord::Schema.define(version: 20171006205438) do
 
   create_table "envelopes", force: :cascade do |t|
     t.string "docusign_template_id"
-    t.string "name"
+    t.string "email_landlord"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "docusign_envelope_id"
+    t.string "email_tenant"
   end
 
   create_table "settings", force: :cascade do |t|

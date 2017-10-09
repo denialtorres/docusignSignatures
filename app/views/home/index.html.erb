@@ -1,0 +1,83 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<div class="row">
+<%= form_for :users, :url => { :action => :create } do |f| %>
+                <div class="small-8 columns">
+                  <div class="row">
+                    <div class="small-3 columns">
+                      <label for="right-label" class="right inline">Landlord Name</label>
+                    </div>
+                    <div class="small-9 columns">
+                      <%= text_field_tag :landlord_name, nil , placeholder: "Name of the Landlord", autofocus: true %>
+                    </div>
+                  </div>
+              <div class="row">
+                <div class="small-3 columns">
+                  <label for="right-label" class="right inline">Landlord Email</label>
+                </div>
+                <div class="small-9 columns">
+                  <%= text_field_tag :landlord_email, nil , placeholder: "Email of the Landlord", autofocus: true %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="small-3 columns">
+                  <label for="right-label" class="right inline">Tenant Name</label>
+                </div>
+                <div class="small-9 columns">
+                  <%= text_field_tag :tenant_name, nil , placeholder: "Name of the Tenant", autofocus: true %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="small-3 columns">
+                  <label for="right-label" class="right inline">Tenant Email</label>
+                </div>
+                <div class="small-9 columns">
+                  <%= text_field_tag :tenant_email, nil , placeholder: "Email of the Tenant", autofocus: true %>
+                </div>
+              </div>
+              <div class='form-group'>
+                <div class='col-md-offset-1 col-md-11'>
+                  <%= f.submit class: 'button round' %> 
+                </div>
+              </div>
+            </div>
+      
+
+
+  </div>
+<% end %>
+
+
+<div class="container">
+    <div class="row">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Docusign Template ID</th>
+                    <th>Envelope ID</th>
+                    <th>Landlord Email</th>
+                    <th>Tenant Email</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @envelopes.each do |envelope| %>
+                    <tr>
+                        <td><%= envelope.id %></td>
+                        <td><%= envelope.docusign_template_id %></td>
+                        <td><%= envelope.docusign_envelope_id %></td>
+                        <td><%= envelope.email_landlord %></td>
+                        <td><%= envelope.email_tenant %></td>
+                        <td><%= envelope.status %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+
+    </div>
+    
+
+
+</div>
