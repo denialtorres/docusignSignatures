@@ -20,3 +20,5 @@ production:
   database: app_production
   url: <%= ENV["DATABASE_URL"] %>
   pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
+  username: 'adtscevwafktyp'
+  password: '6cd5ded1a454d34ca60fff368a0ef07cf173c3f78d8c8df39e0d944169a53306'
