@@ -3,7 +3,6 @@ class CreateEnvelope
 
   def call
     # TODO
-    puts "VAAAAAAAAAAAAAAS A CREAR UN ENVELOPE"
     Envelope.create_from_template(
       Setting.template, [
             {

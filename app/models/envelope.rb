@@ -26,7 +26,7 @@ class Envelope < ApplicationRecord
         }
       },
       event_notification: {
-        url: "https://signatures-denialtorres.c9users.io/docusign/webhooks.xml",
+        url: "https://docusign-rentealo.herokuapp.com/docusign/webhooks.xml",
         logging: true,
         envelope_events: [
           {envelope_event_status_code: "sent"},
