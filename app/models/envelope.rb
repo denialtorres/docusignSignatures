@@ -38,8 +38,6 @@ class Envelope < ApplicationRecord
       }
     )
     
-    puts "estas aqui"
-    binding.pry
     envelope.update(docusign_envelope_id: envelope_response["envelopeId"], 
                     status: envelope_response["status"],
                     email_landlord: roles[0]["landlord"][:email] ,
