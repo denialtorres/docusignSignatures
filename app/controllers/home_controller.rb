@@ -7,17 +7,10 @@ class HomeController < ApplicationController
   end
   
   def download_document
-      client = DocusignRest::Client.new
       path_to_file = "#{Rails.root}/tmp/#{params[:envelope_id]}.pdf"
-      result = client.get_document_from_envelope(
-        envelope_id: params[:envelope_id],
-        document_id: 1,
-        local_save_path: path_to_file
-      )
-      puts result
-      
+      result = DownloadDocument.call(path_to_file: path_to_file, envelope_id: params[:envelope_id])
+      #binding.pry
       #return path_to_file if result && File.exist?(path_to_file)
-      
       send_file path_to_file, :x_sendfile=>true
   end
   

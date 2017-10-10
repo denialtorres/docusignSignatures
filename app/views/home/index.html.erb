@@ -72,8 +72,7 @@
                         <td><%= envelope.email_tenant %></td>
                         <td>
                           <% if envelope.status == "completed" %>
-                            <%= "boton de descargar" %>
-                            <%= button_to "Some Button", action: "download_document", :envelope_id => envelope.docusign_envelope_id %>
+                            <%= button_to "Download", {action: "download_document", :envelope_id => envelope.docusign_envelope_id}, {form_class: 'form', class: 'button round'}  %>
                           <% else %>
                             <%= envelope.status %>
                           <% end %>
