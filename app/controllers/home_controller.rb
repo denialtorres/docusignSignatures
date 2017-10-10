@@ -6,6 +6,21 @@ class HomeController < ApplicationController
   def result
   end
   
+  def download_document
+      client = DocusignRest::Client.new
+      path_to_file = "#{Rails.root}/tmp/#{params[:envelope_id]}.pdf"
+      result = client.get_document_from_envelope(
+        envelope_id: params[:envelope_id],
+        document_id: 1,
+        local_save_path: path_to_file
+      )
+      puts result
+      
+      #return path_to_file if result && File.exist?(path_to_file)
+      
+      send_file path_to_file, :x_sendfile=>true
+  end
+  
   def create
    landlord = User.find_or_create_by(email: params[:landlord_email])
    landlord.name = params[:landlord_name]

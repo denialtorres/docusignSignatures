@@ -70,13 +70,21 @@
                         <td><%= envelope.docusign_envelope_id %></td>
                         <td><%= envelope.email_landlord %></td>
                         <td><%= envelope.email_tenant %></td>
-                        <td><%= envelope.status %></td>
+                        <td>
+                          <% if envelope.status == "completed" %>
+                            <%= "boton de descargar" %>
+                            <%= button_to "Some Button", action: "download_document", :envelope_id => envelope.docusign_envelope_id %>
+                          <% else %>
+                            <%= envelope.status %>
+                          <% end %>
+                        </td>
                     </tr>
                 <% end %>
             </tbody>
         </table>
 
     </div>
+    
     
 
 
